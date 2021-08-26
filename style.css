@@ -1,0 +1,202 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+
+body{
+	/* background-color: #16171a; */
+	background: radial-gradient(circle, rgba(22,23,26,1) 4%, rgba(1,1,1,1) 100%);
+}
+
+p,h1,h2,h3,h4,h5,h6{
+	color: #f5f5f5;
+}
+
+#header{
+	font-weight: 500;
+	margin-top: 10%;
+}
+h1 span{
+	color: #7D98A1;
+}
+#header2{
+	margin-top: 8%;
+}
+
+#header3{
+	margin-top: 10%;
+	font-weight: 500;
+}
+#header3 span {
+	color: rgb(255, 80, 80);
+}
+
+#start-btn{
+   background: linear-gradient(0deg, rgba(255,98,0,1) 4%, rgba(255,158,0,1) 100%);
+    padding: 5px 14px;
+    color: white;
+    font-family: "Poppins", sans-serif;
+    border: none;
+    border-radius: 2rem;
+    font-size: 14;
+    cursor: pointer;
+    zoom: 200%;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 10%;
+}
+#start-btn:hover{
+	color: rgba(255, 255, 255, 0.664);
+	transform: translateX(-50%) scale(1.04);
+}
+.bubbly-button:before, .bubbly-button:after {
+  position: absolute;
+  content: "";
+  display: block;
+  width: 140%;
+  height: 100%;
+  left: -20%;
+  z-index: -1000;
+  transition: all ease-in-out 0.5s;
+  background-repeat: no-repeat;
+}
+.bubbly-button:focus{
+	outline: none;
+}
+.bubbly-button:before {
+  display: none;
+  top: -75%;
+  background-image: radial-gradient(circle, #FF6C00 20%, transparent 20%), radial-gradient(circle, transparent 20%, #FF6C00 20%, transparent 30%), radial-gradient(circle, #FF6C00 20%, transparent 20%), radial-gradient(circle, #FF6C00 20%, transparent 20%), radial-gradient(circle, transparent 10%, #FF6C00 15%, transparent 20%), radial-gradient(circle, #FF6C00 20%, transparent 20%), radial-gradient(circle, #FF6C00 20%, transparent 20%), radial-gradient(circle, #FF6C00 20%, transparent 20%), radial-gradient(circle, #FF6C00 20%, transparent 20%);
+  background-size: 10% 10%, 20% 20%, 15% 15%, 20% 20%, 18% 18%, 10% 10%, 15% 15%, 10% 10%, 18% 18%;
+}
+.bubbly-button:after {
+  display: none;
+  bottom: -75%;
+  background-image: radial-gradient(circle, #FF6C00 20%, transparent 20%), radial-gradient(circle, #FF6C00 20%, transparent 20%), radial-gradient(circle, transparent 10%, #FF6C00 15%, transparent 20%), radial-gradient(circle, #FF6C00 20%, transparent 20%), radial-gradient(circle, #FF6C00 20%, transparent 20%), radial-gradient(circle, #FF6C00 20%, transparent 20%), radial-gradient(circle, #FF6C00 20%, transparent 20%);
+  background-size: 15% 15%, 20% 20%, 18% 18%, 20% 20%, 15% 15%, 10% 10%, 20% 20%;
+}
+.bubbly-button:active {
+  transform: translateX(-50%) scale(0.9) !important;
+  background-color: #6e8c96;
+  
+}
+.bubbly-button.animate:before {
+  display: block;
+  animation: topBubbles ease-in-out 0.75s forwards;
+}
+.bubbly-button.animate:after {
+  display: block;
+  animation: bottomBubbles ease-in-out 0.75s forwards;
+}
+
+@keyframes topBubbles {
+  0% {
+    background-position: 5% 90%, 10% 90%, 10% 90%, 15% 90%, 25% 90%, 25% 90%, 40% 90%, 55% 90%, 70% 90%;
+  }
+  50% {
+    background-position: 0% 80%, 0% 20%, 10% 40%, 20% 0%, 30% 30%, 22% 50%, 50% 50%, 65% 20%, 90% 30%;
+  }
+  100% {
+    background-position: 0% 70%, 0% 10%, 10% 30%, 20% -10%, 30% 20%, 22% 40%, 50% 40%, 65% 10%, 90% 20%;
+    background-size: 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%;
+  }
+}
+@keyframes bottomBubbles {
+  0% {
+    background-position: 10% -10%, 30% 10%, 55% -10%, 70% -10%, 85% -10%, 70% -10%, 70% 0%;
+  }
+  50% {
+    background-position: 0% 80%, 20% 80%, 45% 60%, 60% 100%, 75% 70%, 95% 60%, 105% 0%;
+  }
+  100% {
+    background-position: 0% 90%, 20% 90%, 45% 70%, 60% 110%, 75% 80%, 95% 70%, 110% 10%;
+    background-size: 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%;
+  }
+}
+
+
+/* APP */
+
+#drop-area{
+  width: 90%;
+  margin: auto;
+  margin-top: 3%;
+  height: 55%;
+  background-color: rgba(255, 255, 255, 0.171);
+  border-radius: 30px;
+  border: 2px dashed white;
+  overflow: scroll;
+}
+
+#drop-area h1{
+  font-size: 80px;
+  opacity: .8;
+  position: absolute;
+  top: 37%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width:fit-content;
+}
+
+#food-area{
+ display: grid;
+  grid-gap: 40px;
+  padding: 16px;
+  grid-template-columns: repeat(auto-fill,minmax(160px,1fr));
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(160px,1fr);
+  overflow-x: auto;
+  background-color: rgba(83, 83, 83, 0.349);
+  border-radius:30px;
+  width: 90%;
+  margin: auto;
+  transition: 0.3s;
+  min-height: 192px;
+}
+
+#food-area img{
+transition: 0.3s;
+cursor: pointer;
+
+}
+#food-area img:hover{
+  opacity: 0.8;
+}
+
+#total{
+    font-size: 30px;
+    position: relative;
+    width: fit-content;
+    margin: 10 auto;
+}
+
+#total span{
+  color: #7D98A1;
+}
+
+
+
+@media only screen and (max-width: 680px){
+  #header, #header2, #header3, #header4{
+    font-size: 180%;
+  }
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+    height: 7px;
+}
+::-webkit-scrollbar-thumb {
+    /* background-image: linear-gradient( 
+45deg
+ , #00aeff, #a68eff); */
+ background-color: #f5f5f5;
+    border-radius: 10px;
+    -webkit-box-shadow: rgb(0 0 0 / 12%) 0 3px 13px 1px;
+}
+::-webkit-scrollbar-track {
+    background-color: transparent;
+}

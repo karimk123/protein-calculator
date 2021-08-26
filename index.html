@@ -1,0 +1,144 @@
+<html lang="en">
+<head>
+	<link rel="stylesheet" href="style.css">
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Food Protein Calculator</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+	<!-- JavaScript -->
+<script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
+
+<!-- CSS -->
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.min.css"/>
+<!-- Default theme -->
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/default.min.css"/>
+	<script src="app.js"></script>
+</head>
+<body>
+
+	<div id="intro">
+
+		<center><h1 id="header">Have you ever wondered how much <span>protein</span> your meal has ? Me too.</h1></center>	
+		<center><h1 id="header2">With our new <span>Protein Calculator</span>, you don't have to wonder anymore.</h1></center>	
+		<center><h1 id="header3">There are currently <span>--</span> COVID cases, consuming protein helps protect against it.</h1></center>	
+	
+		<button id="start-btn" onclick="Start()"class="bubbly-button">Start</button>
+	</div>
+
+
+
+	<div id="app" style="display:none">
+		 <h3 id="total">Total protein: <span>0g</span></h3>
+		<div id="drop-area" class="droppable"><h1>DROP FOOD HERE</h1></div>
+		<br>
+		<br>
+		<div id="food-area" class="droppable">
+			<img id="apple" title="Apple"class="draggable"height="160"src="https://www.applesfromny.com/wp-content/uploads/2020/06/SnapdragonNEW.png"/>
+			<img id="banana" title="Banana"class="draggable"height="160"src="https://www.freepnglogos.com/uploads/banana-png/banana-school-council-drapers-mills-primary-academy-little-0.png"/>
+			<img id="egg"title="Egg" class="draggable"height="160"src="https://assets.website-files.com/5f3413348ad47e36f97a4b9f/5fb3fb0d3dfbf768c807678b_Egg_2.png"/>
+			<img id="cheese"title="100g Cheese" class="draggable"height="160"src="https://lh3.googleusercontent.com/w2-mQ7Cj8VMHDR6d0t-FMocTtu1lh1GdHe9Avbq4dlsr9nyGx1UppbMGZYXqYi-eHfeCr9fQ_4GwwxKsziKWEdw_xeumCeAK7Iav6DQ=w1400-k"/>
+			<img id="tomato"title="Tomato" class="draggable"height="160"src="https://www.darlinggroup.co.nz/wp-content/uploads/TOMATO-w-SHADOW-305x381px-LORES.png"/>
+			<img id="beef" title="100g Beef"class="draggable"height="160"src="https://www.flannerybeef.com/pub/media/catalog/product/cache/ca0e9e948368a1251750ab7d307d2203/r/i/ribeye_usdaprime_dryaged_ca_1.png"/>
+			<img id="pasta" title="100g Pasta"class="draggable"height="160"src="https://dreamfields-prod.objects.frb.io/images/products/pastaThumb/penne-large-2.png"/>
+			<img id="lettuce" title="Lettuce"class="draggable"height="160"src="https://regofreshmarket.com/wp-content/uploads/2021/03/iceberg-min.png"/>
+			<img id="bread" title="100g Bread"class="draggable"height="160"src="https://www.labreabakery.com/sites/default/files/styles/large/public/2020-07/GF_Sliced_clipped%20%281%29.png?itok=fWF7gfGA"/>
+			<img id="onion" title="100g Onion"class="draggable"height="160"src="https://www.toponions.com/l/en/library/download/urn:uuid:7a151ddf-dd0b-4008-bcf9-fba2f4b14778/rode-ui-thumb.png"/>
+			<img id="pineapple" title="100g pineapple"class="draggable"height="160" src="https://www.dole.com/-/media/project/dole/produce-images/fruit/pineapple_cut_web.png?h=540&w=720&rev=77f42516c642431eac65057385324af7&hash=8A218F607D9E27339B852FB5785302A0"src="https://www.lipmanfamilyfarms.com/wp-content/uploads/2020/09/Cucumber-hero@2x-1024x696.png"/>
+			<img id="milk" title="100g Milk"class="draggable"height="160" src="https://ww2.kqed.org/app/uploads/sites/38/2016/03/milk-435295-1180x787.png"src="https://www.lipmanfamilyfarms.com/wp-content/uploads/2020/09/Cucumber-hero@2x-1024x696.png"/>
+			<img id="orange" title="100g Orange"class="draggable"height="160" src="https://5.imimg.com/data5/EE/ER/MY-27568370/fresh-orange-500x500.png"src="https://www.lipmanfamilyfarms.com/wp-content/uploads/2020/09/Cucumber-hero@2x-1024x696.png"/>
+			<img id="potato" title="100g Potato"class="draggable"height="160" src="https://www.mr-fruity.co.uk/wp-content/uploads/2019/04/potato-600x0.png"/>
+			<img id="carrot" title="100g Carrot"class="draggable"height="160"src="https://www.fondation-louisbonduelle.org/wp-content/uploads/2016/10/carotte_222805396.png"/>
+			<img id="cucumber" title="100g Cucumber"class="draggable"height="160"src="https://www.lipmanfamilyfarms.com/wp-content/uploads/2020/09/Cucumber-hero@2x-1024x696.png"/>
+		</div>
+	</div>
+</body>
+<script>
+	var protein = {
+		"apple": 0.3,
+		"banana": 1.1,
+		"egg":13,
+		"cheese": 25,
+		"tomato":0.9,
+		"beef": 26,
+		"pasta": 5,
+		"lettuce": 1.4,
+		"bread": 9,
+		"onion": 1.1,
+		"pineapple": 0.5,
+		"milk": 3.4,
+		"orange":0.9,
+		"potato": 3,
+		"carrot": 0.6,
+		"cucumber": 2
+	}
+
+	var itemsPut = []
+	$('.draggable').draggable({
+		cursor: 'move',
+		revert: 'invalid',
+		helper: 'original',
+		
+		start: function (event, ui)
+		{
+			
+			
+			$(this).parent().find('#adminTimeReservation').css('display','block');
+			
+			
+			
+		},
+		drag: function (event, ui)
+		{
+		}
+		
+	});//draggable
+	$('.droppable').droppable({
+		drop: function(ev, ui) {
+			$(this).append(ui.draggable);
+			ui.draggable.position({
+				my: 'left top',
+				at: 'left top',
+				of: this
+			});
+			$(".draggable").css("position","unset");
+			if($("#drop-area").children().length != 1){
+				$("#drop-area h1").hide()
+			}
+			else{
+				$("#drop-area h1").show()
+			}
+			
+			//console.log(ui.draggable.attr("id"))
+			if($(this).attr("id") == "drop-area"){
+
+				let currEleId = ui.draggable.attr("id")
+				if(!itemsPut.includes(currEleId)){
+
+					let addedProtein = protein[currEleId]
+					$("#total span").text(`${parseFloat((parseFloat($("#total span").text()) +addedProtein).toPrecision(12))}g`)
+					itemsPut.push(currEleId)
+				}
+			}else{
+				let currEleId = ui.draggable.attr("id")
+				if(itemsPut.includes(currEleId)){
+
+					let addedProtein = protein[currEleId]
+					$("#total span").text(`${parseFloat((parseFloat($("#total span").text()) -addedProtein).toPrecision(12))}g`)
+					itemsPut.pop(itemsPut.indexOf(currEleId))
+				}
+			}
+			
+			
+		}    
+	});//droppable
+	$(".draggable").css("position","unset");
+</script>
+</html>
