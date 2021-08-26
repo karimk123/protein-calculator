@@ -5,8 +5,8 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Food Protein Calculator</title>
+	<link rel="shortcut icon" href="https://5.imimg.com/data5/EE/ER/MY-27568370/fresh-orange-500x500.png" type="image/x-icon">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
-		<link rel="shortcut icon" href="https://5.imimg.com/data5/EE/ER/MY-27568370/fresh-orange-500x500.png" type="image/x-icon">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -133,9 +133,12 @@
 
 					let addedProtein = protein[currEleId]
 					$("#total span").text(`${parseFloat((parseFloat($("#total span").text()) -addedProtein).toPrecision(12))}g`)
-					itemsPut.pop(itemsPut.indexOf(currEleId))
+					itemsPut.splice(itemsPut.indexOf(currEleId), 1)
+					console.log(currEleId)
 				}
 			}
+
+			console.log(itemsPut)
 			
 			
 		}    
